@@ -11,8 +11,6 @@ var map = new ol.Map({
   })
 });
 
-
-
 var albornozMarker = new ol.Feature({
   geometry: new ol.geom.Point(
     ol.proj.fromLonLat([-77.083925, 39.017404])
@@ -58,12 +56,49 @@ var huckerMarker = new ol.Feature({
     ol.proj.fromLonLat([-77.008779, 39.009014])
   )
 });
-var vectorSource = new ol.source.Vector({
-  features: [albornozMarker, jawandoMarker, riemerMarker, glassMarker, friedsonMarker, riceMarker, katzMarker, navarroMarker, huckerMarker]
+
+
+var atLargeStyle = new ol.style.Style({
+  image: new ol.style.Icon({
+    anchor: [0.5, 0.0],
+    anchorOrigin: "bottom-left",
+    anchorXUnits: 'fraction',
+    anchorYUnits: 'fraction',
+    scale: 0.05,
+    src: 'data/atlarge.png'
+  })
 });
 
-var markerVectorLayer = new ol.layer.Vector({
-  source: vectorSource,
+var districtStyle = new ol.style.Style({
+  image: new ol.style.Icon({
+    anchor: [0.5, 0.0],
+    anchorOrigin: "bottom-left",
+    anchorXUnits: 'fraction',
+    anchorYUnits: 'fraction',
+    scale: 0.05,
+    src: 'data/district.png'
+  })
 });
 
-map.addLayer(markerVectorLayer);
+
+var atlargeSource = new ol.source.Vector({
+  features: [albornozMarker, jawandoMarker, riemerMarker, glassMarker]
+});
+
+var districtSource = new ol.source.Vector({
+  features: [ friedsonMarker, riceMarker, katzMarker, navarroMarker, huckerMarker]
+});
+
+
+var markeratLargeLayer = new ol.layer.Vector({
+  source: atlargeSource,
+  style: atLargeStyle
+});
+
+var markerDistrictLayer = new ol.layer.Vector({
+  source: districtSource,
+  style: districtStyle
+});
+
+map.addLayer(markerDistrictLayer);
+map.addLayer(markeratLargeLayer);
