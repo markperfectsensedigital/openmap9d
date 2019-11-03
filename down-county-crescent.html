@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="page.css" type="text/css" />
+<title>County Council Representation</title>
+<meta charset="utf-8"> 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1_hZGndUMSUoKpS7sAOIfWrmUBFJ1sF0Y&callback=initMap" async defer></script>
+<script>
+function initialize() {
+	var map_canvas = document.getElementById('map_canvas');
+	var map_options = {
+	      center: new google.maps.LatLng(39.1438387,-77.3481777),
+	      zoom: 11,
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
+   	}
+var map = new google.maps.Map(map_canvas,map_options);
+var Eruv;
+var eruvCoords=[
+new google.maps.LatLng(39.022589,-77.103219), /*Grov-Pike NW corner */
+new google.maps.LatLng(39.022641,-77.105271),
+new google.maps.LatLng(39.022753,-77.105522),
+new google.maps.LatLng(39.023074,-77.10652),
+new google.maps.LatLng(39.023939,-77.107351),
+new google.maps.LatLng(39.025041,-77.108365),
+new google.maps.LatLng(39.025739,-77.109049),
+new google.maps.LatLng(39.026325,-77.109714),
+new google.maps.LatLng(39.026896,-77.110506),
+new google.maps.LatLng(39.027267,-77.111034),
+new google.maps.LatLng(39.027623,-77.111573),
+new google.maps.LatLng(39.028115,-77.112646),
+new google.maps.LatLng(39.028511,-77.113603),
+new google.maps.LatLng(39.028865,-77.114719),
+new google.maps.LatLng(39.029154,-77.115894),
+new google.maps.LatLng(39.02939,-77.117157),
+new google.maps.LatLng(39.029607,-77.118595),
+new google.maps.LatLng(39.029811,-77.119992),
+new google.maps.LatLng(39.030015,-77.12121),
+new google.maps.LatLng(39.030015,-77.12121),
+new google.maps.LatLng(39.030442,-77.123938),
+new google.maps.LatLng(39.030684,-77.124745),
+new google.maps.LatLng(39.031086,-77.125596),
+new google.maps.LatLng(39.031242,-77.125782),
+new google.maps.LatLng(39.031492,-77.125877),
+new google.maps.LatLng(39.032008,-77.12575),
+new google.maps.LatLng(39.03252,-77.125629),
+new google.maps.LatLng(39.032666,-77.126145),
+new google.maps.LatLng(39.032225,-77.126328),
+new google.maps.LatLng(39.031633,-77.126514), /* 270 Tukerman NW corner */
+new google.maps.LatLng(39.031405,-77.1269),
+new google.maps.LatLng(39.03132,-77.127586),
+new google.maps.LatLng(39.031428,-77.128351),
+new google.maps.LatLng(39.031761,-77.130079),
+new google.maps.LatLng(39.031949,-77.131056),
+new google.maps.LatLng(39.032026,-77.131616),
+new google.maps.LatLng(39.032171,-77.13241),
+new google.maps.LatLng(39.03226,-77.133048),
+new google.maps.LatLng(39.032316,-77.133659),
+new google.maps.LatLng(39.032345,-77.134165),
+new google.maps.LatLng(39.032377,-77.134668),
+new google.maps.LatLng(39.032421,-77.134964),
+new google.maps.LatLng(39.032469,-77.135477),
+new google.maps.LatLng(39.032469,-77.135477),
+new google.maps.LatLng(39.032628,-77.137002),
+new google.maps.LatLng(39.032678,-77.137392),
+new google.maps.LatLng(39.032763,-77.137927),
+new google.maps.LatLng(39.032881,-77.13852),
+new google.maps.LatLng(39.033024,-77.139155),
+new google.maps.LatLng(39.033151,-77.139605),
+new google.maps.LatLng(39.033305,-77.140044),
+new google.maps.LatLng(39.033516,-77.140543),
+new google.maps.LatLng(39.033817,-77.141171),
+new google.maps.LatLng(39.034074,-77.141584),
+new google.maps.LatLng(39.03448,-77.141992),
+new google.maps.LatLng(39.034986,-77.142673),
+new google.maps.LatLng(39.035795,-77.143566),
+new google.maps.LatLng(39.036405,-77.144103),
+new google.maps.LatLng(39.037122,-77.144596),
+new google.maps.LatLng(39.038022,-77.145272),
+new google.maps.LatLng(39.051119,-77.151897),
+new google.maps.LatLng(39.053239,-77.152686),
+new google.maps.LatLng(39.053672,-77.152764),
+new google.maps.LatLng(39.054257,-77.152616),
+new google.maps.LatLng(39.054789,-77.152359),
+new google.maps.LatLng(39.055255,-77.15209),
+new google.maps.LatLng(39.055509,-77.151782),
+new google.maps.LatLng(39.055603,-77.15149),
+new google.maps.LatLng(39.055647,-77.15127),
+new google.maps.LatLng(39.055636,-77.150795),
+new google.maps.LatLng(39.055084,-77.14752),
+new google.maps.LatLng(39.054805,-77.146233),
+new google.maps.LatLng(39.054626,-77.145584),
+new google.maps.LatLng(39.054397,-77.144908),
+new google.maps.LatLng(39.054326,-77.144578),
+new google.maps.LatLng(39.054255,-77.14399),
+new google.maps.LatLng(39.05423,-77.143337),
+new google.maps.LatLng(39.054254,-77.142972),
+new google.maps.LatLng(39.054282,-77.142039),
+new google.maps.LatLng(39.054278,-77.14204),
+new google.maps.LatLng(39.054279,-77.141567),
+new google.maps.LatLng(39.054303,-77.141229),
+new google.maps.LatLng(39.054299,-77.140608),
+new google.maps.LatLng(39.054227,-77.13996),
+new google.maps.LatLng(39.054514,-77.139926),
+new google.maps.LatLng(39.054187,-77.138178),
+new google.maps.LatLng(39.055853,-77.136631),
+new google.maps.LatLng(39.056237,-77.137317),
+new google.maps.LatLng(39.05788,-77.1361),
+new google.maps.LatLng(39.061603,-77.133374),
+new google.maps.LatLng(39.063928,-77.130606),
+new google.maps.LatLng(39.064948,-77.129512),
+new google.maps.LatLng(39.06743,-77.131631),
+new google.maps.LatLng(39.067709,-77.131234),
+new google.maps.LatLng(39.06813,-77.131631),
+new google.maps.LatLng(39.068408,-77.131396),
+new google.maps.LatLng(39.068633,-77.13117),
+new google.maps.LatLng(39.068882,-77.130769),
+new google.maps.LatLng(39.069046,-77.130521),
+new google.maps.LatLng(39.06733,-77.128898),
+new google.maps.LatLng(39.067589,-77.128543),
+new google.maps.LatLng(39.06817,-77.127599),
+new google.maps.LatLng(39.06167,-77.120156),
+
+new google.maps.LatLng(39.059603, -77.117731),
+new google.maps.LatLng(39.058921, -77.118961), /* Tbrook Chapman NE */
+new google.maps.LatLng(39.058593, -77.118640), /* Tbrook Chapman SE */
+new google.maps.LatLng(39.058735, -77.118385), 
+new google.maps.LatLng(39.059234, -77.117355), /* Guitar Center N corner */
+new google.maps.LatLng(39.058350, -77.116288), /* HHS  */
+new google.maps.LatLng(39.057948, -77.115922), /* Flagship corner  */
+new google.maps.LatLng(39.057628, -77.115875), /* First lamp post on Bou */
+new google.maps.LatLng(39.057490, -77.115303), /* Second lamp post on Bou */
+new google.maps.LatLng(39.057241, -77.114934), /* Third lamp post on Bou */
+new google.maps.LatLng(39.057285, -77.114797), /* Back to train fence */
+new google.maps.LatLng(39.053664, -77.110643), /* Train fence and Randolph */
+new google.maps.LatLng(39.053493, -77.110680), /* */
+new google.maps.LatLng(39.053487, -77.110847), /* */
+new google.maps.LatLng(39.053515, -77.110924), /* Randolph Nevel NE */
+new google.maps.LatLng(39.053234, -77.110835), /* Randolph Nebel SE */
+new google.maps.LatLng(39.053063, -77.110826), /* Proceed south on Nebel */
+new google.maps.LatLng(39.052810, -77.110730), 
+new google.maps.LatLng(39.052306, -77.110369), 
+new google.maps.LatLng(39.051710, -77.109909), 
+new google.maps.LatLng(39.050911, -77.109284), 
+new google.maps.LatLng(39.050703, -77.109129), 
+new google.maps.LatLng(39.050381, -77.108656), /* Nebel, just south of OGR */
+new google.maps.LatLng(39.050241, -77.108317), /* Continue S on Nebel */
+new google.maps.LatLng(39.050091, -77.107917),
+new google.maps.LatLng(39.049949, -77.107662),
+new google.maps.LatLng(39.049727, -77.107396),
+new google.maps.LatLng(39.048039, -77.105402), /* Nebel Marinelli NE */
+new google.maps.LatLng(39.048379, -77.104706), /* Turn into parking lot  */
+new google.maps.LatLng(39.048012, -77.104313), 
+new google.maps.LatLng(39.047777, -77.104606), /* Start Outline of MoCo building */
+new google.maps.LatLng(39.047819, -77.104726), 
+new google.maps.LatLng(39.047648, -77.104949), 
+new google.maps.LatLng(39.047533, -77.104797), 
+new google.maps.LatLng(39.047409, -77.105035), 
+new google.maps.LatLng(39.047098, -77.105036), /* End outline of MoCo building, start outline of Biro Dominican Salon */
+new google.maps.LatLng(39.047076, -77.104592),
+new google.maps.LatLng(39.046631, -77.104529),
+new google.maps.LatLng(39.046586, -77.104666),
+new google.maps.LatLng(39.046278, -77.104751),
+new google.maps.LatLng(39.046268, -77.105058), /* End of Biro Dominican, cross Nebel */
+new google.maps.LatLng(39.045748, -77.105291),
+new google.maps.LatLng(39.045204, -77.105115), /* Cross Nicholson */
+new google.maps.LatLng(39.045031, -77.105462), /* Continue W on Nicholson */
+new google.maps.LatLng(39.044921, -77.105961), 
+new google.maps.LatLng(39.044872, -77.106768),
+new google.maps.LatLng(39.044810, -77.108639),
+new google.maps.LatLng(39.044780, -77.108914),
+new google.maps.LatLng(39.044699, -77.109973), 
+new google.maps.LatLng(39.044757, -77.110605), 
+new google.maps.LatLng(39.044792, -77.110950), 
+new google.maps.LatLng(39.044650, -77.111478), /* Nicholson Rock Pike SE */
+
+/* End of Eruv expansion to north east */
+new google.maps.LatLng(39.035438,-77.106925), /*Strathmore + Pke */
+new google.maps.LatLng(39.035138,-77.106812),/*Strathmore + Pke */
+new google.maps.LatLng(39.034765,-77.106681),
+new google.maps.LatLng(39.033615,-77.106252),
+new google.maps.LatLng(39.033055,-77.10604),
+new google.maps.LatLng(39.032482,-77.105817),
+new google.maps.LatLng(39.03184,-77.105502),
+/*new google.maps.LatLng(39.031743,-77.105911),
+new google.maps.LatLng(39.030944,-77.105498),*/
+new google.maps.LatLng(39.030911,-77.104994), /*Pike + Tuckerman */
+new google.maps.LatLng(39.030465, -77.104791),
+new google.maps.LatLng(39.030392,-77.105185),
+new google.maps.LatLng(39.029649,-77.104796),
+new google.maps.LatLng(39.029108,-77.104499),
+new google.maps.LatLng(39.028162,-77.1041),
+new google.maps.LatLng(39.0275,-77.103931),
+new google.maps.LatLng(39.026275,-77.103683),
+new google.maps.LatLng(39.025072,-77.103439),
+new google.maps.LatLng(39.024299,-77.103275),
+new google.maps.LatLng(39.023649,-77.103196)
+];
+
+//Eruv = new google.maps.Polygon({paths: eruvCoords,strokeColor: "#0000FF",strokeOpacity: 0.8,strokeWeight: 3,fillColor: "#000000",fillOpacity: 0.0});
+//Eruv.setMap(map);
+
+var AlbornozCoords = new google.maps.LatLng(39.0171791,-77.086178);
+var JawandoCoords = new google.maps.LatLng(39.0676717,-76.9993682);
+var RiemerCoords = new google.maps.LatLng(38.9840061,-77.0217289);
+var GlassCoords = new google.maps.LatLng(39.0126544,-77.0142608);
+var FriedsonCoords = new google.maps.LatLng(38.991166,-77.1050814);
+var RiceCoords = new google.maps.LatLng(39.1563382,-77.2887439);
+var KatzCoords = new google.maps.LatLng(39.091644,-77.2064834);
+var NavarroCoords = new google.maps.LatLng(39.067364,-77.0103307);
+var HuckerCoords = new google.maps.LatLng(39.0087636,-77.0110215);
+
+var AlbornozMarker = new google.maps.Marker({ position: AlbornozCoords, map: map, title:"Gabe Albornoz", icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'}); 
+var JawandoMarker = new google.maps.Marker({ position: JawandoCoords, map: map, title:"William Jawando"});
+var RiemerMarker = new google.maps.Marker({ position: RiemerCoords, map: map, title:"Hans Riemer"}); 
+var GlassMarker = new google.maps.Marker({ position: GlassCoords, map: map, title:"Evan Glass"}); 
+var FriedsonMarker = new google.maps.Marker({ position: FriedsonCoords, map: map, title:"Andrew Friedson"}); 
+var RiceMarker = new google.maps.Marker({ position: RiceCoords, map: map, title:"Craig Rice"}); 
+var KatzMarker = new google.maps.Marker({ position: KatzCoords, map: map, title:"Sidney Katz"}); 
+var NavarroMarker = new google.maps.Marker({ position: NavarroCoords, map: map, title:"Nancy Navarro"}); 
+var HuckerMarker = new google.maps.Marker({ position: HuckerCoords, map: map, title:"Tom Hucker"}); 
+//var NinedString = '<div id="content"><div id="siteNotice"></div><h1 id="firstHeading" class="firstHeading">Nine Districts for Moco</h1><div id="bodyContent"><p>803 Montrose Rd., Rockville, MD 20852.</p></div></div>';
+//var infowindow = new google.maps.InfoWindow({content: EIString});
+//google.maps.event.addListener(EIMarker, 'click', function() {
+    //infowindow.open(map,EIMarker);
+//});
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+<body>
+	<h1>Are You Represented?</h1>
+	<p>The following map shows where our county council members live.</p>
+</body>
+</html>
