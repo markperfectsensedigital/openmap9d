@@ -1,3 +1,37 @@
+/*Proj4js.Datum["potsdam"] = {towgs84: "598.1,73.7,418.2,0.202,0.045,-2.455,6.7", ellipse: "bessel", datumName: "Potsdam Rauenberg 1950 DHDN"};
+// Declare projection. Definition comes from http://epsg.io/31466/
+Proj4js.defs["EPSG:31466"] = "+proj=tmerc +lat_0=0 +lon_0=6 +k=1 +x_0=2500000 +y_0=0 +ellps=bessel +towgs84=598.1,73.7,418.2,0.202,0.045,-2.455,6.7 +units=m +no_defs";
+console.log(Proj4js.defs["EPSG:31466"]);
+var proj_wgs84 = new ol.proj.Projection("EPSG:4326");
+var proj_31466 = new ol.proj.Projection("EPSG:31466");
+// Center for projection EPSG:31466
+
+var point = new ol.geom.Point( ol.proj.fromLonLat([2769212.70, 5678724.61]));
+//var point = new OpenLayers.LonLat(2769212.70, 5678724.61);
+var new_point= point.clone().transform(proj_31466, proj_wgs84);
+console.log(new_point);
+
+
+Proj4js.defs["WGS84"] = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs";
+Proj4js.defs["EPSG:27700"] = "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 +units=m +no_defs";
+
+var source = new Proj4js.Proj('WGS84');    
+var dest = new Proj4js.Proj('EPSG:27700');
+
+var testPt = new Proj4js.Point(1.3534606328125,52.25635981528);
+
+Proj4js.transform(source, dest, testPt);
+
+proj4.defs("EPSG:2285","+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=us-ft +no_defs");
+
+
+var southWestOld = new proj4.toPoint( 1258455.010582735529169, 473828.448958728462458 );   
+
+var southWestNew = proj4.transform('EPSG:2285', 'EPSG:3857', southWestOld); 
+console.log(southWestNew);
+
+
+*/
 var map = new ol.Map({
   target: 'mapdiv',
   layers: [
@@ -103,7 +137,10 @@ var markerDistrictLayer = new ol.layer.Vector({
 
 
 var countyBoundaryFeature = new ol.Feature({
-  geometry: new ol.geom.Polygon([[[-77.083925,39.017404], [-76.997179,39.067922], [-77.019519,38.984281],[-77.083925,39.017404]]])
+ // geometry: new ol.geom.Polygon([[[-77.083925,39.017404], [-76.997179,39.067922], [-77.019519,38.984281],[-77.083925,39.017404]]])
+ geometry: new ol.geom.Polygon([ [ [ 1258455.010582735529169, 473828.448958728462458 ], 
+  [ 1258358.485917484387755, 473852.205146271851845 ], 
+  [ 1258146.181671458063647, 473928.224457839038223 ], [ 1258455.010582735529169, 473828.448958728462458 ]]])
 });
 
 /*var countyBoundaryFeature = new ol.Feature({
@@ -113,13 +150,13 @@ var countyBoundaryFeature = new ol.Feature({
 
 /*var countyBoundaryFeature = new ol.Feature({
   geometry:  new ol.geom.Circle([-77.083925,39.017404],0.5)
-});*/
+});
 
-countyBoundaryFeature.getGeometry().transform('EPSG:4326', 'EPSG:3857');
+countyBoundaryFeature.getGeometry().transform('EPSG:2285', 'EPSG:3857');
 
 var countyBoundarySource = new ol.source.Vector({
   features: [ countyBoundaryFeature]
-});
+});*/
 
 var countyBoundaryStyle = new ol.style.Style({
   stroke: new ol.style.Stroke({
@@ -129,8 +166,11 @@ var countyBoundaryStyle = new ol.style.Style({
 });
 
 var countyBoundaryLayer = new ol.layer.Vector({
-  source: countyBoundarySource,
-      style: countyBoundaryStyle
+  source: new ol.source.Vector({
+    url: './data/mocobndy_200sheet_sp.geojson',
+    format: new ol.format.GeoJSON()
+  }),
+  style: countyBoundaryStyle
 });
 map.addLayer(countyBoundaryLayer);
 map.addLayer(markerDistrictLayer);
