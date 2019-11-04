@@ -72,7 +72,7 @@ var atLargeStyle = new ol.style.Style({
 var districtStyle = new ol.style.Style({
   image: new ol.style.Icon({
     anchor: [0.5, 0.0],
-    anchorOrigin: "bottom-left",
+    anchorOrigin: 'bottom-left',
     anchorXUnits: 'fraction',
     anchorYUnits: 'fraction',
     scale: 0.05,
@@ -102,3 +102,30 @@ var markerDistrictLayer = new ol.layer.Vector({
 
 map.addLayer(markerDistrictLayer);
 map.addLayer(markeratLargeLayer);
+
+/*var countyBoundaryFeature = new ol.Feature({
+  geometry:  new ol.geom.Polygon([[-77.083925,39.017404], [-76.997179,39.067922], [-77.019519,38.984281],[-77.083925,39.017404]])
+});*/
+
+var countyBoundaryFeature = new ol.Feature({
+  geometry:  new ol.geom.Circle([-77.083925,39.017404],0.5)
+});
+
+countyBoundaryFeature.getGeometry().transform('EPSG:4326', 'EPSG:3857');
+
+var countyBoundaryStyle = new ol.style.Style({
+  stroke: new ol.style.Stroke({
+    color: 'rgba(0, 0, 255, 1)',
+    width: 2.5
+})
+});
+
+var countyBoundarySource = new ol.source.Vector({
+  features: [ countyBoundaryFeature]
+});
+
+var countyBoundaryLayer = new ol.layer.Vector({
+  source: countyBoundarySource,
+      style: countyBoundaryStyle
+});
+map.addLayer(countyBoundaryLayer);
