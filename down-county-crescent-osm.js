@@ -136,12 +136,27 @@ var markerDistrictLayer = new ol.layer.Vector({
 
 
 
+/*var originalPoints  =new Array([ [ 1258455.010582735529169, 473828.448958728462458 ], [ 1258358.485917484387755, 473852.205146271851845 ], [ 1258146.181671458063647, 473928.224457839038223 ], [ 1258022.149809540249407, 473972.48569370910991 ], [ 1258455.010582735529169, 473828.448958728462458 ]]);
+
+for (var i = 0; i< originalPoints.length; i++ ) {
+  var onePoint = originalPoints[i];
+  var d = onePoint[0];
+  var s = onePoint[1];
+
+} */
+
 var countyBoundaryFeature = new ol.Feature({
  // geometry: new ol.geom.Polygon([[[-77.083925,39.017404], [-76.997179,39.067922], [-77.019519,38.984281],[-77.083925,39.017404]]])
- geometry: new ol.geom.Polygon([ [ [ 1258455.010582735529169, 473828.448958728462458 ], 
-  [ 1258358.485917484387755, 473852.205146271851845 ], 
-  [ 1258146.181671458063647, 473928.224457839038223 ], [ 1258455.010582735529169, 473828.448958728462458 ]]])
+
+ geometry: new ol.geom.Polygon([ [ [ 1258455.010582735529169, 473828.448958728462458 ], [ 1258358.485917484387755, 473852.205146271851845 ], [ 1258146.181671458063647, 473928.224457839038223 ], [ 1258022.149809540249407, 473972.48569370910991 ], [ 1258455.010582735529169, 473828.448958728462458 ]]] )
 });
+
+countyBoundaryFeature.getGeometry().transform('EPSG:4326', 'EPSG:3857');
+
+var countyBoundarySource = new ol.source.Vector({
+  features: [ countyBoundaryFeature]
+});
+
 
 /*var countyBoundaryFeature = new ol.Feature({
   geometry:  new ol.geom.LineString([[-77.083925,39.017404], [-76.997179,39.067922]])
@@ -158,6 +173,8 @@ var countyBoundarySource = new ol.source.Vector({
   features: [ countyBoundaryFeature]
 });*/
 
+
+
 var countyBoundaryStyle = new ol.style.Style({
   stroke: new ol.style.Stroke({
     color: 'rgba(0, 0, 255, 1)',
@@ -166,10 +183,7 @@ var countyBoundaryStyle = new ol.style.Style({
 });
 
 var countyBoundaryLayer = new ol.layer.Vector({
-  source: new ol.source.Vector({
-    url: './data/mocobndy_200sheet_sp.geojson',
-    format: new ol.format.GeoJSON()
-  }),
+  source: countyBoundarySource,
   style: countyBoundaryStyle
 });
 map.addLayer(countyBoundaryLayer);
