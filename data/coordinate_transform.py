@@ -30,21 +30,4 @@ f.write(hugecoords)
 f.write(" ] ]")
 f.close()
 
-#x = f.readlines()
-
-#print(x)
-#original_points = re.split("\], \[",x[0])
-#number_coords = len(original_points)
-#for coord in original_points:
-#	print (coord)
-
-#print (original_points)
-#print (original_points[0])
-#print (original_points[number_coords - 1])
-
-#x, y = isn2004(1258455.010582735529169, 473828.448958728462458)
-#print (x,y)
-#x1, y1 = pyproj.transform(isn2004,wgs84,1258455.010582735529169, 473828.448958728462458)
-#print (x1,y1)
-
-
+print ("All done")
