@@ -8,9 +8,10 @@ var map = new ol.Map({
     })
   ],
   view: new ol.View({
-    center: ol.proj.fromLonLat([-77.162814, 39.131416]),
+ //   center: ol.proj.fromLonLat([-77.162814, 39.131416]),
+    center: ol.proj.fromLonLat([-77.115478, 39.052865]),
 //    extent:ol.proj.transformExtent([-70,35,-80,40], 'EPSG:4326', 'EPSG:4326'),
-    zoom: 10
+    zoom: 15
   })
 });
 
