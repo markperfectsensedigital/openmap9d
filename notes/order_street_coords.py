@@ -1,3 +1,4 @@
+#!/usr/bin/python3.6
 import json
 #import geojson
 import sys
@@ -16,7 +17,7 @@ sort_dir = sys.argv[3]
 print ("Ordering coordinates for %s %s" %(street_name, street_type))
 
 
-with open ('/tmp/barf.geojson', 'r') as f:
+with open ('/tmp/hugefile_parsed.json', 'r') as f:
 	hugefile = json.load(f)
 
 features = hugefile['features']
@@ -40,4 +41,4 @@ for local_coord in street_coordinates:
 outfile.close()
 
 
-print ("All done")
+print ("All done. Results in /tmp/street_coordinates.txt")

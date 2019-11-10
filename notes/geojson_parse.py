@@ -1,6 +1,8 @@
+#!/usr/bin/python3.6
+
 import json
 
-with open ('/tmp/barf.geojson', 'r') as f:
+with open ('/home/abba/maryland-politics/NineDistrictsForMoCo/streets_orig.json', 'r') as f:
 	hugefile = json.load(f)
 
 parsed = json.dumps(hugefile, indent=2)
