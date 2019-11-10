@@ -36,7 +36,7 @@ else:
 
 outfile = open("/tmp/street_coordinates.txt", "w")
 for local_coord in street_coordinates:
-	outfile.write(str(local_coord) + "\n")
+	outfile.write(str(local_coord) + ",\n")
 
 outfile.close()
 
