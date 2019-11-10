@@ -2,7 +2,7 @@
 
 import json
 
-with open ('/home/abba/maryland-politics/NineDistrictsForMoCo/streets_orig.json', 'r') as f:
+with open ('/tmp/b8d9596beab2428885a051d59d86f80e_0.geojson', 'r') as f:
 	hugefile = json.load(f)
 
 parsed = json.dumps(hugefile, indent=2)
