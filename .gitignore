@@ -1,4 +1,5 @@
 .~lock.*
 .vscode/*
+*.swp
 notes/*json
 
