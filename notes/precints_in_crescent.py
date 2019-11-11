@@ -25,6 +25,7 @@ with open ('/home/abba/maryland-politics/NineDistrictsForMoCo/openmap9d/notes/el
 features = hugefile['features']
 
 outfile = open("/home/abba/maryland-politics/NineDistrictsForMoCo/openmap9d/notes/precincts_in_bounding_box.csv", "w")
+marker_file = open("/home/abba/maryland-politics/NineDistrictsForMoCo/openmap9d/notes/precincts_in_bounding_box.js", "w")
 outfile.write("Precinct\tCouncil District\tLon\tLat\n")
 
 for feature in features:
@@ -34,6 +35,9 @@ for feature in features:
             feature['properties']['x_lat'],
             feature['properties']['y_lat']))
 
+        marker_file.write('var Marker%s = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([%s, %s]))});\n' %(feature['properties']['PRECINCT_'],feature['properties']['x_lat'],feature['properties']['y_lat']))
+
 outfile.close()
+marker_file.close()
 
 print ("All done. Results in precincts_in_bounding_box.csv")
