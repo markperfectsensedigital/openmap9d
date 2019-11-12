@@ -1,4 +1,3 @@
-
 //var maxExtent = transform([-80,40,-70,35])
 var map = new ol.Map({
   target: 'mapdiv',
