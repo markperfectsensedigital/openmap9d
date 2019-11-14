@@ -98,7 +98,6 @@ var downCountyCrescentFeature = new ol.Feature({
   var Marker229 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.00088584449861, 39.0118461839503])),label: 'Precinct 229'});
   var Marker228 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-76.98518844514581, 39.00935945168413])),label: 'Precinct 228'});
   var Marker220 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.05455841121136, 39.019117136177044])),label: 'Precinct 220'});
-  var Marker219 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.02621989692346, 39.017549731567385])),label: 'Precinct 219'});
   var Marker218 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.03494680515001, 39.01741908822254])),label: 'Precinct 218'});
   var Marker227 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.10655454240936, 39.01656521263487])),label: 'Precinct 227'});
   var Marker226 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.11806165640775, 38.99968530252204])),label: 'Precinct 226'});
@@ -118,15 +117,10 @@ var downCountyCrescentFeature = new ol.Feature({
   var Marker241 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.08896997678602, 38.98682647787996])),label: 'Precinct 241'});
   var Marker240 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.02455104329005, 38.99511945164153])),label: 'Precinct 240'});
   var Marker239 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.01579246664426, 39.00043152099215])),label: 'Precinct 239'});
-  var Marker238 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.21317271724246, 38.99031708966214])),label: 'Precinct 238'});
   var Marker237 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.1295008624283, 38.988791496845295])),label: 'Precinct 237'});
   var Marker236 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.01035786433454, 39.00425113506037])),label: 'Precinct 236'});
   var Marker199 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.03703936277952, 39.033842541683555])),label: 'Precinct 199'});
-  var Marker198 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.16874009189019, 39.03201191482634])),label: 'Precinct 198'});
-  var Marker197 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-76.98763157847594, 39.027488665192834])),label: 'Precinct 197'});
   var Marker196 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.07699507014024, 39.03951409725278])),label: 'Precinct 196'});
-  var Marker195 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.01704712834794, 39.04363815933692])),label: 'Precinct 195'});
-  var Marker217 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.17390418855416, 39.00922394482842])),label: 'Precinct 217'});
   var Marker216 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.05739234327433, 39.02861942254049])),label: 'Precinct 216'});
   var Marker215 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.0050375495976, 39.02131107358713])),label: 'Precinct 215'});
   var Marker214 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.11417843046712, 39.02340930462282])),label: 'Precinct 214'});
@@ -134,58 +128,24 @@ var downCountyCrescentFeature = new ol.Feature({
   var Marker212 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.08933010749774, 39.01310951151339])),label: 'Precinct 212'});
   var Marker211 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.13010172484769, 39.02539188890796])),label: 'Precinct 211'});
   var Marker210 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.09648464753843, 39.02925778821566])),label: 'Precinct 210'});
-  var Marker209 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.21225088498028, 39.02088088319516])),label: 'Precinct 209'});
-  var Marker208 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.17202174081035, 39.03157838276968])),label: 'Precinct 208'});
-  var Marker207 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-76.99221163998891, 39.027616647153536])),label: 'Precinct 207'});
-  var Marker206 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.02636209004748, 39.030587424756106])),label: 'Precinct 206'});
   var Marker205 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.07501557225368, 39.02578928531511])),label: 'Precinct 205'});
   var Marker204 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.1592128899673, 39.024389989371684])),label: 'Precinct 204'});
   var Marker203 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.03062314038789, 39.038802167337565])),label: 'Precinct 203'});
-  var Marker202 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.02041937357541, 39.033310438959006])),label: 'Precinct 202'});
   var Marker201 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.12234821525891, 39.03836338179917])),label: 'Precinct 201'});
   var Marker200 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.05174584348225, 39.033900499981314])),label: 'Precinct 200'});
   var Marker185 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.14511121218726, 39.047103743166815])),label: 'Precinct 185'});
-  var Marker197a = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.00176107997879, 39.039475314448566])),label: 'Precinct 197'});
-  var Marker183 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.16148984597089, 39.046497463092294])),label: 'Precinct 183'});
-  var Marker182 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.17312814196333, 39.04430479019908])),label: 'Precinct 182'});
   var Marker180 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.12534230979679, 39.053666420699756])),label: 'Precinct 180'});
-  var Marker172 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.20619071149645, 39.04755033451136])),label: 'Precinct 172'});
-  var Marker171 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.12009532145095, 39.0687280363947])),label: 'Precinct 171'});
-  var Marker170 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-76.99533295280094, 39.056521734400974])),label: 'Precinct 170'});
-  var Marker169 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.04136212708715, 39.06135615457947])),label: 'Precinct 169'});
-  var Marker168 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.03070018820597, 39.04960283562741])),label: 'Precinct 168'});
-  var Marker167 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.06794890187052, 39.06001727803988])),label: 'Precinct 167'});
-  var Marker166 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.20583834482807, 39.026946801926385])),label: 'Precinct 166'});
-  var Marker165 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.11472991349319, 39.07091077106128])),label: 'Precinct 165'});
   var Marker181 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.09658155693438, 39.03304551092202])),label: 'Precinct 181'});
   var Marker179 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.07756902332648, 39.05125536432956])),label: 'Precinct 179'});
-  var Marker177 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.17443653308572, 39.06313533217906])),label: 'Precinct 177'});
-  var Marker176 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-76.97558606236709, 39.04609804230574])),label: 'Precinct 176'});
   var Marker174 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.09658155693438, 39.03304551092202])),label: 'Precinct 174'});
   var Marker175 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.09805355746158, 39.05065059637724])),label: 'Precinct 175'});
   var Marker173 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.09805355746158, 39.05065059637724])),label: 'Precinct 173'});
-  var Marker194 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.19153504294542, 39.041007560352284])),label: 'Precinct 194'});
-  var Marker193 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.178637575057, 39.04485877918643])),label: 'Precinct 193'});
   var Marker196a = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.06703602049282, 39.03961589670854])),label: 'Precinct 196'});
   var Marker190 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.1184305572927, 39.04614414557784])),label: 'Precinct 190'});
   var Marker189 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.13059479373908, 39.041889517173445])),label: 'Precinct 189'});
   var Marker188 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.09805355746158, 39.05065059637724])),label: 'Precinct 188'});
-  var Marker187 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.06390853378952, 39.05112270290908])),label: 'Precinct 187'});
   var Marker186 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.0393881974071, 39.04555886924061])),label: 'Precinct 186'});
-  var Marker130 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.039027844482, 39.065750273467984])),label: 'Precinct 130'});
-  var Marker163 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.07915902416937, 39.061550414615624])),label: 'Precinct 163'});
   var Marker161 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.08528912949316, 39.0485027508351])),label: 'Precinct 161'});
-  var Marker160 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.20583834482807, 39.026946801926385])),label: 'Precinct 160'});
-  var Marker159 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.11472991349319, 39.07091077106128])),label: 'Precinct 159'});
-  var Marker158 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.17443653308572, 39.06313533217906])),label: 'Precinct 158'});
-  var Marker157 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.11472991349319, 39.07091077106128])),label: 'Precinct 157'});
-  var Marker156 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.09022085960504, 39.06824914478136])),label: 'Precinct 156'});
-  var Marker155 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.09022085960504, 39.06824914478136])),label: 'Precinct 155'});
-  var Marker154 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-76.99417292533076, 39.068767160421885])),label: 'Precinct 154'});
-  var Marker153 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.00568149955922, 39.05780193733682])),label: 'Precinct 153'});
-  var Marker152 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.12009532145095, 39.0687280363947])),label: 'Precinct 152'});
-  var Marker148 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.0670629806313, 39.065436838000664])),label: 'Precinct 148'});
-  var Marker144 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.188864127886, 39.059219006281126])),label: 'Precinct 144'});
   
   function styleFunction(feature) {
     console.log('showing style function');
@@ -236,7 +196,7 @@ var downCountyCrescentFeature = new ol.Feature({
 });
 
   var precinctSource = new ol.source.Vector({
-    features: [Marker271, Marker270, Marker269, Marker268, Marker267, Marker253, Marker252, Marker251, Marker250, Marker266, Marker265, Marker264, Marker253a, Marker263, Marker262, Marker261, Marker260, Marker259, Marker258, Marker257, Marker256, Marker255, Marker254, Marker235, Marker234, Marker233, Marker232, Marker231, Marker230, Marker229, Marker228, Marker220, Marker219, Marker218, Marker227, Marker226, Marker225, Marker224, Marker223, Marker222, Marker221, Marker249, Marker248, Marker247, Marker246, Marker245, Marker244, Marker243, Marker228a, Marker241, Marker240, Marker239, Marker238, Marker237, Marker236, Marker199, Marker198, Marker197, Marker196, Marker195, Marker217, Marker216, Marker215, Marker214, Marker213, Marker212, Marker211, Marker210, Marker209, Marker208, Marker207, Marker206, Marker205, Marker204, Marker203, Marker202, Marker201, Marker200, Marker185, Marker197a, Marker183, Marker182, Marker180, Marker172, Marker171, Marker170, Marker169, Marker168, Marker167, Marker166, Marker165, Marker181, Marker179, Marker177, Marker176, Marker174, Marker175, Marker173, Marker194, Marker193, Marker196a, Marker190, Marker189, Marker188, Marker187, Marker186, Marker130, Marker163, Marker161, Marker160, Marker159, Marker158, Marker157, Marker156, Marker155, Marker154, Marker153, Marker152, Marker148, Marker144]
+    features: [Marker271, Marker270, Marker269, Marker268, Marker267, Marker253, Marker252, Marker251, Marker250, Marker266, Marker265, Marker264, Marker253a, Marker263, Marker262, Marker261, Marker260, Marker259, Marker258, Marker257, Marker256, Marker255, Marker254, Marker235, Marker234, Marker233, Marker232, Marker231, Marker230, Marker229, Marker228, Marker220, Marker218, Marker227, Marker226, Marker225, Marker224, Marker223, Marker222, Marker221, Marker249, Marker248, Marker247, Marker246, Marker245, Marker244, Marker243, Marker228a, Marker241, Marker240, Marker239,  Marker237, Marker236, Marker199, Marker196, Marker216, Marker215, Marker214, Marker213, Marker212, Marker211, Marker210, Marker205, Marker204, Marker203, Marker201, Marker200, Marker185,  Marker180, Marker181, Marker179, Marker174, Marker175, Marker173, Marker196a, Marker190, Marker189, Marker188, Marker186, Marker161]
   });
 
 
