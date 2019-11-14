@@ -33,7 +33,8 @@ var countyBoundaryStyle = new ol.style.Style({
 
 var countyBoundaryLayer = new ol.layer.Vector({
   source: countyBoundarySource,
-  style: countyBoundaryStyle
+  style: countyBoundaryStyle,
+  name: 'countyBoundaryLayer'
 });
 
 var downCountyCrescentFeature = new ol.Feature({
@@ -61,7 +62,8 @@ var downCountyCrescentFeature = new ol.Feature({
   
   var downCountyCrescentLayer = new ol.layer.Vector({
     source: downCountyCrescentSource,
-    style: downCountyCrescentStyle
+    style: downCountyCrescentStyle,
+    name: 'downCountyCrescentLayer'
   });
   
   var Marker271 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.10960672175668, 38.95773816111915])),label: 'Precinct 271'});
@@ -184,7 +186,6 @@ var downCountyCrescentFeature = new ol.Feature({
   var Marker152 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.12009532145095, 39.0687280363947])),label: 'Precinct 152'});
   var Marker148 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.0670629806313, 39.065436838000664])),label: 'Precinct 148'});
   var Marker144 = new ol.Feature({geometry: new ol.geom.Point(ol.proj.fromLonLat([-77.188864127886, 39.059219006281126])),label: 'Precinct 144'});
- Marker144.setStyle(styleFunction)
   
   function styleFunction(feature) {
     console.log('showing style function');
@@ -201,7 +202,7 @@ var downCountyCrescentFeature = new ol.Feature({
         }),
         text: new ol.style.Text({
           font: '12px Calibri,sans-serif',
-          fill: new ol.style.Fill({ color: '#000' }),
+          fill: new ol.style.Fill({ color: '#FF0000' }),
           stroke: new ol.style.Stroke({
             color: '#fff', width: 2
           }),
@@ -231,15 +232,7 @@ var downCountyCrescentFeature = new ol.Feature({
       anchorYUnits: 'fraction',
       scale: 0.05,
       src: 'data/atlarge.png'
-    })/*,
-    text: new ol.style.Text({
-      font: '12px sans-serif',
-      fill: new ol.style.Fill({ color: '#000' }),
-      stroke: new ol.style.Stroke({
-        color: '#fff', width: 2,
-      }),
-      text:  'barf'
-  })*/
+    })
 });
 
   var precinctSource = new ol.source.Vector({
@@ -250,7 +243,8 @@ var downCountyCrescentFeature = new ol.Feature({
 
   var precinctLayer = new ol.layer.Vector({
     source: precinctSource,
-    style: precinctStyle
+    style: precinctStyle,
+    name: 'precinctLayer'
   });
 map.addLayer(countyBoundaryLayer);
 map.addLayer(downCountyCrescentLayer);
@@ -267,8 +261,16 @@ map.on('moveend', function(e) {
   }
 
 });
-
-console.log(precinctLayer.getStyle())
-console.log(map.getView())
-console.log(map.getView().getZoom())
+/* Assign the style function to each marker. This displays the marker's
+   precinct label. */
+map.getLayers().forEach(function(element,index,array) {
+  console.log( element.get('name'))
+  if (element.get('name') == 'precinctLayer') {
+    console.log('found precinct layer ' + typeof(element))
+    featureArray = element.getSource().getFeatures();
+    featureArray.forEach(function(feature) {
+      feature.setStyle(styleFunction)
+    })
+  }
+});
 
