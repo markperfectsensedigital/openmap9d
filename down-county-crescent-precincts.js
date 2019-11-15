@@ -55,8 +55,8 @@ var downCountyCrescentFeature = new ol.Feature({
   
   var downCountyCrescentStyle = new ol.style.Style({
     stroke: new ol.style.Stroke({
-      color: 'rgba(255, 0, 0, 1)',
-      width: 4
+      color: '#FF0000',
+      width: 2
     })
   });
   
