@@ -1,26 +1,85 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="css/ol.css" type="text/css">
-    <link rel="stylesheet" href="css/static.css" type="text/css">
-    <style>
-      .map {
-        height: 600px;
-        width: 100%;
-      }
-    </style>
-    <script src="ol.js"></script>
-    <title>Precincts in the Down County Crescent</title>
-  </head>
-  <body>
-    <h1>Precincts in the Down County Crescent</h1>
-      <div id="mapdiv" class="map"></div>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/proj4js/1.1.0/proj4js-compressed.min.js"></script>
-    <script src="ol/proj4.js"></script>
-    <!--script src="down-county-crescent-osm.js"></script-->
-    <script src="down-county-crescent-precincts.js"></script>
-  
 
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="css/ol.css" type="text/css">
+  <link rel="stylesheet" href="css/static.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    .map {
+      height: 600px;
+      width: 80%;
+    }
+  </style>
+  <script src="data/ol.js"></script>
+  <title>Precincts in the Down County Crescent</title>
+</head>
+
+<body class="mx-5">
+  <h2>Precincts in the Down County Crescent</h2>
+  <p>The following map shows the precincts in the down-county crescent. and the table below the map shows the number of registered voters in each precinct.</p>
+  <div>
+    <div id="mapdiv" class="map mx-auto"></div>
+    <table class="table mt-5">
+      <cols>
+        <col width="30%"/>
+        <col width="30%"/>
+        <col width="30%"/>
+      </cols>
+      <thead>
+        <tr>
+          <th>Precinct</th>
+          <th>Address</th>
+          <th class="text-right">Number registered voters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>a</td>
+          <td>b</td>
+          <td class="text-right">c</td>
+        </tr>
+        <tr>
+          <td>d</td>
+          <td>e</td>
+          <td class="text-right">f</td>
+        </tr>
+        <tr>
+          <td>g</td>
+          <td>h</td>
+          <td class="text-right">i</td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Total:</b></td>
+          <td class="text-right">100</td>
+        </tr>
+        <tr>
+            <td colspan="2"><b>Total down-county-crescent voters as a percentage of all 655,000 voters in Montgomery County:</b></td>
+            <td class="text-right">30.00%</td>
+          </tr>
+        </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">
+            <p><small>Sources:</small></p>
+            <p><small>Precinct locations: "Election Precincts", Montgomery County Geographic Information Systems, available at <a href="https://data2018-mcgov-gis.opendata.arcgis.com/datasets/election-precincts">https://data2018-mcgov-gis.opendata.arcgis.com/datasets/election-precincts</a>.</small></p>
+            <p><small>Registered voters per precinct: October 2019, Montgomery County Board of Elections.</small></p>
+            <p><small>Find an error? <a href="mailto:tn@gmail.com">Tell us!</a></small></p>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/proj4js/1.1.0/proj4js-compressed.min.js"></script>
+  <script src="ol/proj4.js"></script>
+  <!--script src="down-county-crescent-osm.js"></script-->
+  <script src="down-county-crescent-precincts.js"></script>
+
+
+</body>
+
 </html>
