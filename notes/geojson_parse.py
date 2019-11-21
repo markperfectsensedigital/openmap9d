@@ -4,7 +4,8 @@ import json
 import sys
 import os
 
-new_filename = os.path.abspath(sys.argv[1]) + "_parsed.json"
+basename = os.path.splitext(sys.argv[1])[0]
+new_filename = basename + "_parsed.geojson"
 
 with open (sys.argv[1], 'r') as f:
 	hugefile = json.load(f)
